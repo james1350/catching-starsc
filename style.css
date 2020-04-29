@@ -1,0 +1,417 @@
+body {
+    margin: 0;
+
+}
+
+#screen {
+    position: relative;
+    height: 99vh;
+    width: 99vw;
+}
+
+#game {
+    position: absolute;
+    height: 99vh;
+    width: 99vw;
+    overflow: hidden;
+
+}
+
+.blur {
+    opacity: 70%;
+    filter: blur(50%)
+}
+
+
+#game_background {
+    position: absolute;
+    width: 99vw;
+    height: 99vh;
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+
+#game_elements {
+    position: absolute;
+    top: 15vh;
+    width: 99vw;
+    height: 74vh;
+    overflow: hidden;
+    border: 5px solid white;
+}
+
+#star {
+    position: absolute;
+    height: 8vw;
+    width: 8vw;
+    top: -3vw;
+}
+
+#star .star {
+    position: absolute;
+    top: -3vw;
+    height: 8vw;
+    width: 8vw;
+    background-image: url(SVG/star.svg);
+    background-size: 100%;
+
+}
+
+#star1 {
+    position: absolute;
+    height: 7vw;
+    width: 8vw;
+    right: 27vw;
+     top: -12vh;
+}
+
+#star1 .star1 {
+    height: 9vw;
+    width: 9vw;
+    background-image: url(SVG/star.svg);
+    background-size: 100%;
+
+}
+
+@keyframes fall {
+    0% {
+        top: -5vh;
+    }
+
+    100% {
+        top: 70vh;
+    }
+}
+
+
+#bstar {
+    position: absolute;
+    height: 8vw;
+    width: 8vw;
+    left: 20vw;
+    top: -12vh;
+}
+
+#bstar .bstar {
+    background-image: url(SVG/badstar.svg);
+    background-size: 100%;
+    height: 9vw;
+    width: 9vw;
+}
+
+#circle {
+    position: absolute;
+    height: 9vw;
+    width: 9vw;
+    left: 35vw;
+     top: -12vh;
+}
+
+#circle .circle {
+    background-image: url(SVG/circle.svg);
+    background-size: 100%;
+    height: 8vw;
+    width: 8vw;
+    
+
+}
+
+#heart {
+    position: absolute;
+    height: 11vw;
+    width: 11vw;
+    right: 16vw;
+     top: -12vh;
+}
+
+#heart .heart {
+    background-image: url(SVG/heart.svg);
+    background-size: 100%;
+    height: 11vw;
+    width: 11vw;
+
+
+
+}
+
+#time {
+    position: absolute;
+    height: 7vw;
+    width: 9vw;
+    left: 9vw;
+     top: -12vh;
+}
+
+#time .time {
+    height: 9vw;
+    width: 9vw;
+    background-image: url(SVG/tim.svg);
+    background-size: 100%;
+
+
+}
+
+#cross {
+    position: absolute;
+    height: 6vw;
+    width: 6vw;
+    left: 50vw;
+     top: -12vh;
+}
+
+#cross .cross {
+    height: 6vw;
+    width: 6vw;
+    background-image: url(SVG/cross.svg);
+    background-size: 100%;
+
+}
+
+#rect {
+    position: absolute;
+    height: 6vw;
+    width: 7vw;
+    left: 85vw;
+     top: -12vh;
+}
+
+#rect .rect {
+    background-image: url(SVG/rect.svg);
+    background-size: 100%;
+    width: 8vw;
+    height: 7vw;
+}
+
+#game_ui {
+    position: absolute;
+    margin: 0;
+    height: 12vw;
+    width: 99vw;
+    top: 0vw;
+    max-height: 130px;
+
+}
+
+
+
+#score_board {
+    position: absolute;
+    font-size: 35px;
+    color: white;
+}
+
+
+
+#hearts {
+    position: absolute;
+    display: flex;
+    height: 5vw;
+   
+    right: 20px;
+    font-size: 40px;
+    top: 1vw;
+}
+
+#ustart {
+    position: absolute;
+    border: 2px solid black;
+    height: 5vw;
+    width: 15vw;
+    left: 5vw;
+   bottom: 1vh;
+    transform: scale(1);
+    background-color: lightblue;
+    opacity: 95%;
+    border-radius: 10%;;
+    font-size: 2vw;
+
+}
+
+.trans {
+    transform: scale(0);
+    opacity: 0;
+}
+#time_board{
+    position: absolute;
+    top: 5vh;
+    font-size: 35px;
+    color: skyblue;
+    left: 2vw;
+    
+}
+
+#mute_container {
+    text-align: center;
+
+    font-size: 2.5vw;
+    position: absolute;
+    height: 3vw;
+    width: 9vw;
+    background-color: deepskyblue;
+    border: 1px solid black;
+    left: 40vw;
+    bottom: 0vh;
+    border-radius: 25%;
+    opacity: 50;
+    overflow: hidden;
+    padding: .2vw;
+    z-index: 0;
+}
+
+.active_heart {
+    opacity: 100%;
+}
+
+.broken_heart {
+    opacity: 0%;
+}
+
+.pause {
+    animation-play-state: paused;
+
+}
+
+.shake {
+    animation-name: shake_kf;
+    animation-duration: .2s;
+    animation-iteration-count: 2;
+    animation-timing-function: linear;
+}
+
+
+@keyframes shake_kf {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+
+    10% {
+        transform: rotate(-5deg) scale(1.5);
+    }
+
+    50% {
+        transform: rotate(10deg) scale(1.5);
+    }
+
+    100% {
+        transform: rotate(-10deg) scale(1.5);
+    }
+}
+
+.zoom {
+    animation-name: zoom_kf;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.67, .47, .33, 1.46);
+    animation-fill-mode: forwards;
+}
+#time_container{
+    position: absolute;
+    height: 5vw;
+    width: 40vw;
+    border: .3vw solid skyblue;
+    left: 30vw;
+    top: 1vw;
+    
+}
+#time_sprite{
+    height: 5vw;
+    width: 40vw;
+   transform-origin: left center;
+    
+}
+
+
+.shrink{
+    animation-name: shrink_kf;
+    animation-duration: 60s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+
+/*key frames*/
+@keyframes shrink_kf{
+    0%{
+        transform: scaleX(1);
+        background-color: white;
+    }
+    50%{
+        background-color: skyblue;
+    }
+    100%{
+        background-color: purple;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes zoom_kf {
+    0% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(.8);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(15deg);
+        opacity: 0;
+    }
+}
+
+.falling {
+    animation-name: falling_kf;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+}
+
+@keyframes falling_kf {
+    0% {
+        top: -20vh;
+    }
+
+    100% {
+        top: 90vh;
+    }
+}
+
+.speed1 {
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.speed2 {
+    animation-duration: 5s;
+}
+
+.speed3 {
+    animation-duration: 9s;
+}
+
+.speed4 {
+    animation-duration: 3s;
+}
+
+.speed5 {
+    animation-duration: 8s;
+}
+
+.speed6 {
+    animation-duration: 4.5s;
+}
+
+.speed7 {
+    animation-duration: 2.5s;
+}
+
+.speed8 {
+    animation-duration: 5s;
+}

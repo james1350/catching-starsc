@@ -1,0 +1,22 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="181" height="53" viewBox="0 0 181 53">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #74c2ff;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        font-size: 37.46px;
+        font-family: BradleyHandITC, Bradley Hand ITC;
+      }
+    </style>
+  </defs>
+  <ellipse class="cls-1" cx="90.5" cy="25.57" rx="81.5" ry="18.34"/>
+  <text class="cls-2" transform="translate(54.62 34.22) scale(0.77 1)">Back</text>
+</svg>
